@@ -1,0 +1,22 @@
+html {
+    
+    background-color: black;
+    background-image: url("images/restaurant.jpg");
+    background-size: 100%, 100%;
+    color: white;
+}
+
+.falsologo {
+    text-align: left;
+    float: left;
+    padding-left: 50px;
+    font-size: 40px;
+}
+
+div > a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    text-align: left;
+    padding: 20px;
+}
