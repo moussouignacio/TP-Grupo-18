@@ -1,5 +1,5 @@
 html {
-    
+    font-family: 'Roboto Mono', monospace;
     background-color: black;
     background-image: url("images/restaurant.jpg");
     background-size: 100%, 100%;
@@ -11,6 +11,7 @@ html {
     float: left;
     padding-left: 50px;
     font-size: 40px;
+    font-family: 'Roboto Mono', monospace;
 }
 
 div > a {
