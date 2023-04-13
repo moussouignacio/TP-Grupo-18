@@ -33,6 +33,13 @@ div > a {
     border-width: 4px;
 }
 
+#banner1:hover {
+    background-color: white;
+    color: #0067a5;
+    
+    
+}
+
 #banner2 {
     text-align: left;
     font-size: 26px;
@@ -46,7 +53,13 @@ div > a {
     border-width: 4px;
 }
 
+#banner2:hover {
+    background-color: white;
+    color: #007fff
+}
+
 #bannercontacto {
+    display: flex;
     background-image: url(images/madera1.jpg);
     font-size: 22px;
     padding-top: 35px;
@@ -57,8 +70,13 @@ div > a {
     margin-bottom: auto;
 }
 
-#txtbanner {
-    font-family: 'Roboto Mono', monospace;
-    margin-bottom: 30px;
+#bannerleft {
+    width: 550px;
+}
+
+#formulario {
+    font-size: 26px;
+    padding-top: 30px;
+    padding-right: 800px;
 }
 
