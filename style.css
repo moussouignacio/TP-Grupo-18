@@ -1,82 +1,46 @@
-html {
-    font-family: 'Roboto Mono', monospace;
-    background-color: black;
-    background-image: url("images/restaurant.jpg");
-    background-size: 100%, 100%;
-    color: white;
+* {font-family: 'Josefin Sans', sans-serif;}
+
+.container {
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr / 0.5fr 1fr 1fr ;
 }
 
-.falsologo {
+.links {
+    grid-column: 3;
+    grid-row: 1 
+}   
+
+header {
     text-align: left;
-    float: left;
-    padding-left: 50px;
-    font-size: 40px;
-    font-family: 'Roboto Mono', monospace;
+    grid-column: 1 / span 2;
+    padding: 40px
 }
 
 div > a {
-    color: white;
     text-decoration: none;
-    font-size: 22px;
-    text-align: left;
-    padding: 400px;
+    font-size: 28px;
 }
 
-#banner1 {
-    text-align: right;
-    font-size: 26px;
-    padding-right: 20px;
-    margin-right: 400px;
-    margin-top: 100px;
-    margin-left: 850px;
-    border-style: solid;
-    border-width: 4px;
+div > a:hover {
+    color: lightblue;
 }
 
-#banner1:hover {
-    background-color: white;
-    color: #0067a5;
-    
-    
+
+.button1 {
+    border: 2px solid;
+    font-size: 40px;
+    max-width: max-content;
+    padding: 20px;
 }
 
-#banner2 {
-    text-align: left;
-    font-size: 26px;
-    padding-right: 20px;
-    padding-bottom: -50px;
-    padding-left: 30px;
-    margin-right: 250px;
-    margin-top: 50px;
-    margin-left: 850px;
-    border-style: solid;
-    border-width: 4px;
+.button2 {
+    border: 2px solid;
+    font-size: 40px;
+    max-width: max-content;
+    padding: 20px;
 }
 
-#banner2:hover {
-    background-color: white;
-    color: #007fff
+.button1:hover, .button2:hover {
+    background-color: lightblue;
+    color: white;
 }
-
-#bannercontacto {
-    display: flex;
-    background-image: url(images/madera1.jpg);
-    font-size: 22px;
-    padding-top: 35px;
-    margin-top: 120px;
-    margin-left: -10px;
-    padding-left: 20px;
-    margin-right: -8px;
-    margin-bottom: auto;
-}
-
-#bannerleft {
-    width: 550px;
-}
-
-#formulario {
-    font-size: 26px;
-    padding-top: 30px;
-    padding-right: 800px;
-}
-
