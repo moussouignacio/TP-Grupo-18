@@ -1,59 +1,56 @@
 * {font-family: 'Josefin Sans', sans-serif;}
 
+/*-----------------------------------------------Propiedades del container ----------------------------------------------------- */
 .container {
     display: grid;
-    grid-template: 1fr 190px 16% / 0.5fr 1fr 1fr ;
+    grid-template: 2fr 3fr 1fr / 1fr 1fr 1fr;
+    grid-template-areas: "falsologo navbar links" 
+                        "img img buttons" 
+                        "footer footer footer";
+    height: 720px;
+    gap: 10px;
 }
 
+.item {
+    max-width: max-content;
+}
+
+/*----------------------------------------------- Barra de Navegación  --------------------------------------------------------- */
+ /* LOGO */
+.falsologo {
+    grid-area: falsologo;
+    font-size: 30px;
+    padding: 30px;
+}
+
+.navbar {
+    grid-area: navbar;
+}
+ /* LINKS */
 .links {
-    grid-column: 3;
-    grid-row: 1 
-}   
-
-header {
-    text-align: left;
-    grid-column: 1 / span 2;
-    padding: 40px
+    grid-area: links;
 }
 
-div > a {
+li > a {
     text-decoration: none;
-    font-size: 28px;
-    color: black
+    font-size: 26px;
+    color: black;
 }
 
-div > a:hover {
-    color: lightblue;
+/*----------------------------------------------------- Botones Derecha -------------------------------------------------------- */
+
+.buttons {
+    grid-area: buttons;
 }
 
-.button1 {
-    border: 2px solid;
-    font-size: 40px;
-    max-width: max-content;
-    padding: 20px;
+/* ---------------------------------------------------------------Image ----------------------------------------------------------- */
+
+.img {
+    grid-area: img;
 }
 
-.button2 {
-    border: 2px solid;
-    font-size: 40px;
-    max-width: max-content;
-    padding: 20px;
-}
-
-.button1:hover, .button2:hover {
-    background-color: lightblue;
-    color: white;
-}
+/* ---------------------------------------------------------------Footer --------------------------------------------------------  */
 
 .footer {
-    grid-column: 1 / span 4;
-    grid-row-start: 3;
-    background-color: aquamarine;
-    margin: -8px;
-}
-
-.item1 {
-    grid-column: 1 / span 2;
-    max-width: max-content;
-    padding: 20px;
+    grid-area: footer;
 }
