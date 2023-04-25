@@ -1,17 +1,17 @@
-* {font-family: 'Josefin Sans', sans-serif;}
+* {font-family: 'Josefin Sans', sans-serif; }
 
 /*-----------------------------------------------Propiedades del container ----------------------------------------------------- */
 .container {
     display: grid;
-    grid-template: 2fr 3fr 1fr / 1fr 1fr 1fr;
+    height: 745px;
+    grid-template: 2fr 3fr 1fr / 1fr 0.5fr 1fr;
     grid-template-areas: "falsologo navbar links" 
                         "img img buttons" 
-                        "footer footer footer";
-    height: 720px;
-    gap: 10px;
+                        "pie pie pie";
+    margin: -8px;
 }
 
-.item {
+.item { 
     max-width: max-content;
 }
 
@@ -19,7 +19,7 @@
  /* LOGO */
 .falsologo {
     grid-area: falsologo;
-    font-size: 30px;
+    font-size: 25px;
     padding: 30px;
 }
 
@@ -29,6 +29,7 @@
  /* LINKS */
 .links {
     grid-area: links;
+    text-align: left;
 }
 
 li > a {
@@ -37,12 +38,31 @@ li > a {
     color: black;
 }
 
+li > a:hover {
+    font-size: 28px;
+    color: aquamarine;
+}
+
 /*----------------------------------------------------- Botones Derecha -------------------------------------------------------- */
 
 .buttons {
     grid-area: buttons;
+    margin-left: 40px;
+
 }
 
+.btn1 {
+    font-size: 30px;
+    border: 2px solid;
+    padding: 24px;
+}
+
+.btn2 {
+    font-size: 30px;
+    border: 2px solid;
+    padding: 24px;
+    max-width: max-content;
+}
 /* ---------------------------------------------------------------Image ----------------------------------------------------------- */
 
 .img {
@@ -51,6 +71,11 @@ li > a {
 
 /* ---------------------------------------------------------------Footer --------------------------------------------------------  */
 
-.footer {
-    grid-area: footer;
+.pie {
+    grid-area: pie;
+    display: flex;
+    background-color: orange;
+    max-width: none;
+    justify-content: space-evenly;
+    align-items: center;
 }
