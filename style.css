@@ -5,7 +5,7 @@ html {
 
 
 /*-----------------------------------------------Propiedades del container ----------------------------------------------------- */
-.container {
+.container1 {
     display: grid;
     height: 745px;
     grid-template: 2fr 3fr 1fr / 1fr 0.5fr 1fr;
@@ -13,6 +13,11 @@ html {
                         "img img buttons" 
                         "pie pie pie";
     margin: -8px;
+}
+
+.container2 {
+    display: grid;
+    height: 780px;
 }
 
 .item { 
@@ -93,5 +98,4 @@ li > a:hover {
     max-width: none;
     justify-content: space-around;
     align-items: center;
-    
 }
