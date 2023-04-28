@@ -18,6 +18,7 @@ html {
 .container2 {
     display: grid;
     height: 780px;
+    grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 0.4fr 1fr 1fr 1fr 0.4fr;
 }
 
 .item { 
@@ -98,4 +99,24 @@ li > a:hover {
     max-width: none;
     justify-content: space-around;
     align-items: center;
+}
+
+/*---------------------------------------------------------------Scroll -----------------------------------------------------------*/
+
+.recuadro1 {
+    grid-row-start: 2;
+    grid-row-end: 6;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    /* border: dashed 4px; */
+    padding: 20px;
+    font-size: 30px;
+    background-color:burlywood
+}
+
+.recuadro2 {
+    grid-row-start: 2;
+    grid-row-end: 6;
+    grid-column-start: 4;
+    background-image: url(images/sydney-restaurants-woodcut.webp);
 }
