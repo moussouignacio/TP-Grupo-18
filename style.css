@@ -21,6 +21,14 @@ html {
     grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 0.4fr 1fr 1fr 1fr 0.4fr;
 }
 
+.container3 {
+    display: grid;
+    height: 1280px;
+    grid-template: 1fr 2fr 2fr 2fr 2fr 2fr / 1fr 0.5fr 1fr;
+    grid-template-areas: "falsologo navbar links";
+    margin: -8px;
+}
+
 .item { 
     max-width: max-content;
     color: white;
@@ -121,8 +129,33 @@ li > a:hover {
     background-image: url(images/chef.jpg);
 }
 
-.trip {
-    grid-row-start: 6;
-    grid-column-start: 4;
-    background-image: url(images/madera1.jpg);
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Pagina2--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.img1 {
+    background-image: url(images/carta\ comida.jpg);
+    grid-row: 2 / 5;
+    grid-column: 3;
+    margin-right: 50px;
+    margin-bottom: 37px;
+}
+
+.entrantes {
+    background-color: #664229;
+    grid-row: 2 / 5;
+    grid-column: 1 / span 2;
+    margin-left: 50px;
+    margin-bottom: 37px;
+    color: white;
+    padding: 10px;
+}
+
+.clase {
+    color: white;
+    font-size: 35px;
+    text-align: center;
+}
+
+.comida1 {
+    text-align: center;
+    font-size: 26px;
 }
