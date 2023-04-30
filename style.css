@@ -5,6 +5,7 @@ html {
 
 
 /*-----------------------------------------------Propiedades del container ----------------------------------------------------- */
+
 .container1 {
     display: grid;
     height: 745px;
@@ -40,6 +41,11 @@ html {
     grid-area: falsologo;
     font-size: 25px;
     padding: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }
 
 .navbar {
