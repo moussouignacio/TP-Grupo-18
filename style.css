@@ -4,8 +4,8 @@ html {
 }
 
 
-/*-----------------------------------------------Propiedades del container ----------------------------------------------------- */
-
+/*-----------------------------------------------Propiedades de los containers ----------------------------------------------------- */
+/* pagina principal */
 .container1 {
     display: grid;
     height: 745px;
@@ -22,6 +22,7 @@ html {
     grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 0.4fr 1fr 1fr 1fr 0.4fr;
 }
 
+/* carta de comidas */
 .container3 {
     display: grid;
     height: 1920px;
@@ -30,10 +31,20 @@ html {
     margin: -8px;
 }
 
+/* carta de bebidas */
 .container4 {
     display: grid;
     height: 1920px;
     grid-template: 1fr 2fr 2fr 2fr 2fr 2fr / 1fr 0.5fr 1fr;
+    grid-template-areas: "falsologo navbar links";
+    margin: -8px;
+}
+
+/* página de reservas */
+.container5 {
+    display: grid;
+    height: 745px;
+    grid-template: 2fr 3fr 1fr / 1fr 0.5fr 1fr;
     grid-template-areas: "falsologo navbar links";
     margin: -8px;
 }
@@ -260,7 +271,7 @@ li > a:hover {
     margin-bottom: 72px;
 }
 
-/* ------------------------------------------------------------------- Softs -----------------------------------------------------------------------------------------*/
+/* ------------------------------------------------------------------- Softs  -----------------------------------------------------*/
 
 .img-softs {
     background-image: url(images/img2.jpg);
@@ -276,4 +287,12 @@ li > a:hover {
     grid-column: 2 / span 2;
     margin-right: 50px;
     margin-bottom: 72px;
+}
+
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Reservas-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.img-reservas {
+    background-image: url(images/reservas.jpg);
+    grid-row: 2 / span 2;
+    grid-column: 1 / span 2;
 }
