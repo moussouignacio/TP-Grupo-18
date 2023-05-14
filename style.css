@@ -295,4 +295,39 @@ li > a:hover {
     background-image: url(images/reservas.jpg);
     grid-row: 2 / span 2;
     grid-column: 1 / span 2;
+    margin-left: 50px;
+    margin-bottom: 72px
+}
+
+.recuadro-reservas {
+    background-color: #83764F;
+    grid-row: 2 / span 2;
+    grid-column: 3;
+    margin-right: 50px;
+    margin-bottom: 72px;
+}
+
+.btn-reservas {
+    font-size: 26px;
+    background-color: transparent;
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 15px;
+    color: white;
+    position: relative;
+    top: 120px;
+    left: 200px;
+}
+
+.btn-reservas:hover {
+    background-color: white;
+    color: #83764f;
+}
+
+.txt1-reservas {
+    font-size: 22px;
+    text-align: center;
+    position: relative;
+    top: 180px;
+    color: #fff;
 }
