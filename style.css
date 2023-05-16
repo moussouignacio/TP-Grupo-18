@@ -98,12 +98,13 @@ li > a:hover {
     font-size: 35px;
     border: 4px solid;
     padding: 24px;
+    transition: all 0.3s;
 }
 
 .btn1:hover {
-    background-color: white;
-    color: #9C0F48;
-    opacity: 0.99;
+    background-color: #83764F;
+    /* color: #664229; */
+    transform: translateY(-10px);
 }
 
 .btn2 {
@@ -111,11 +112,13 @@ li > a:hover {
     border: 4px solid;
     padding: 24px;
     max-width: max-content;
+    transition: all 0.3s;
 }
 
 .btn2:hover {
-    color: #9C0F48;
-    background-color: white;
+    /* color: #ff8400; */
+    background-color: #664229;
+    transform: translateY(-10px);
 }
 /* ---------------------------------------------------------------Image ----------------------------------------------------------- */
 
@@ -132,6 +135,13 @@ li > a:hover {
     max-width: none;
     justify-content: space-around;
     align-items: center;
+}
+
+.campo-formulario {
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 6px;
+    margin: 5px;
 }
 
 /*---------------------------------------------------------------Scroll -----------------------------------------------------------*/
@@ -317,11 +327,13 @@ li > a:hover {
     position: relative;
     top: 120px;
     left: 200px;
+    transition: all 0.3s;
 }
 
 .btn-reservas:hover {
     background-color: white;
     color: #83764f;
+    transform: translateY(-10px);
 }
 
 .txt1-reservas {
