@@ -49,6 +49,14 @@ html {
     margin: -8px;
 }
 
+.container6 {
+    display: grid;
+    height: 1600px;
+    grid-template: 1fr 2fr 2fr 2fr  / 1fr 0.5fr 1fr;
+    grid-template-areas: "falsologo navabar links";
+    margin: -8px;
+}
+
 .item { 
     max-width: max-content;
     color: white;
@@ -59,7 +67,7 @@ html {
 .falsologo {
     grid-area: falsologo;
     font-size: 25px;
-    padding: 30px;
+    padding: 30px 30px 30px 50px;
 }
 
 a {
@@ -342,4 +350,43 @@ li > a:hover {
     position: relative;
     top: 180px;
     color: #fff;
+}
+
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Temporada2023-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.img-temporada {
+    background-image: url(images/Sopa-caliente.jpg);
+    grid-row: 2;
+    grid-column: 1 / span 1;
+    margin-left: 50px;
+    margin-bottom: 72px;
+}
+
+.recuadro-temporada {
+    background-color: #83764F;
+    grid-row: 2;
+    grid-column: 2/ span 3;
+    margin-right: 50px;
+    margin-bottom: 72px;
+    font-size: 30px;
+    color: white;
+    padding: 20px;
+}
+
+.img-carta-temp {
+    background-image: url(images/recuadrotemp.webp);
+    grid-row: 3 / span 4;
+    grid-column: 2 / span 3;
+    margin-right: 50px;
+    margin-bottom: 72px;
+}
+
+.recuadro-carta-temp {
+    background-color: #83764F;
+    grid-row: 3 / span 4;
+    grid-column: 1 / span 2;
+    margin-left: 50px;
+    margin-bottom: 72px;
+    color: #fff;
+    padding: 20px;
 }
