@@ -409,4 +409,29 @@ li > a:hover {
     .recuadro1 {
         font-size: 22px;
     }
+
+    .item {
+        font-size: 22px;
+    }
+
+    .btn1, .btn2 {
+        border: solid 1px;
+    }
+    li > a {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 650px) {
+    .recuadro1 {
+        font-size: 22px;
+    }
+
+    .item {
+        font-size: 20px;
+    }
+
+    li > a {
+        font-size: 22px;
+    }
 }
