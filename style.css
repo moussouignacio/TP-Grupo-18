@@ -206,6 +206,10 @@ li > a:hover {
     font-size: 26px;
 }
 
+/* para el media querie */
+.entree {
+    font-size: 26px;
+}
 /* --------------------------------------------------------------- mains ------------------------------------------------------------*/
 
 .mains {
@@ -287,6 +291,12 @@ li > a:hover {
     grid-column: 1 / span 2;
     margin-left: 50px;
     margin-bottom: 72px;
+}
+
+/* para el media querie */
+
+.cocktails {
+    font-size: 26px;
 }
 
 /* ------------------------------------------------------------------- Softs  -----------------------------------------------------*/
@@ -504,4 +514,25 @@ li > a:hover {
         font-size: 12px;
     }
 
+}
+
+@media (max-width: 400px) {
+    .item {
+        font-size: 14px;
+    }
+    .recuadro1 {
+        font-size: 14px;
+    }
+
+    .entree {
+        font-size: 12px;
+    }
+
+    .comida {
+        margin-right: 19px;
+    }
+
+    .cocktails {
+        font-size: 13px;
+    }
 }
