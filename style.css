@@ -152,6 +152,10 @@ li > a:hover {
     margin: 5px;
 }
 
+.btn {
+    color: black;
+}
+
 /*---------------------------------------------------------------Scroll -----------------------------------------------------------*/
 
 .recuadro1 {
@@ -525,7 +529,7 @@ li > a:hover {
     }
 
     .entree {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .comida {
@@ -548,5 +552,24 @@ li > a:hover {
 
     .recuadro-carta-temp {
         font-size: 12px;
+    }
+
+    .btn1, .btn2 {
+        margin-right: 20px;
+    }
+
+    .pie {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-height: none;
+    }
+
+    .btn {
+        width: 50%;
+    }
+
+    .campo-formulario {
+        margin-left: 10px;
     }
 }
