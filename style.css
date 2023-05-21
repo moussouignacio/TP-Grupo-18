@@ -318,6 +318,8 @@ li > a:hover {
 }
 
 .recuadro-reservas {
+    display: grid;
+    grid-template: 2fr 2fr / 1fr 1fr 1fr;
     background-color: #83764F;
     grid-row: 2 / span 2;
     grid-column: 3;
@@ -332,10 +334,16 @@ li > a:hover {
     border-radius: 20px;
     padding: 15px;
     color: white;
-    position: relative;
-    top: 120px;
-    left: 200px;
+    width: max-content;
+    height: max-content;
+    grid-row: 1;
+    grid-column: 2;
+    align-self: center;
+    /* position: relative;
+    top: 150px;
+    left: 200px; */
     transition: all 0.3s;
+    margin-left: 20px;
 }
 
 .btn-reservas:hover {
@@ -347,9 +355,11 @@ li > a:hover {
 .txt1-reservas {
     font-size: 22px;
     text-align: center;
-    position: relative;
-    top: 180px;
+    /* position: relative;
+    top: 180px; */
     color: #fff;
+    grid-row: 2;
+    grid-column: 2;
 }
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Temporada2023-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -397,11 +407,27 @@ li > a:hover {
     .recuadro1 {
         font-size: 28px;
     }
+
+    .clase, .comida, .bebidas {
+        font-size: 24px;
+    }
+
+    .recuadro-temporada, .recuadro-carta-temp {
+        font-size: 23px;
+    }
 }
 
 @media (max-width: 1161px) {
     .recuadro1 {
         font-size: 25px;
+    }
+
+    .clase, .comida, .bebidas {
+        font-size: 22px;
+    }
+
+    .recuadro-temporada, .recuadro-carta-temp {
+        font-size: 20px;
     }
 }
 
@@ -420,6 +446,22 @@ li > a:hover {
     li > a {
         font-size: 25px;
     }
+
+    .campo-formulario {
+        font-size: 10px;
+    }
+
+    div > h2 {
+        font-size: 15px;
+    }
+
+    .clase, .comida, .bebidas {
+        font-size: 18px;
+    }
+
+    .recuadro-temporada, .recuadro-carta-temp {
+        font-size: 18px;
+    }
 }
 
 @media (max-width: 650px) {
@@ -434,4 +476,32 @@ li > a:hover {
     li > a {
         font-size: 22px;
     }
+
+    .clase, .comida, .bebidas {
+        font-size: 15px;
+    }
+
+    .txt1-reservas, .btn-reservas {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .recuadro-temporada, .recuadro-carta-temp {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .recuadro1 {
+        font-size: 16px;
+    }
+
+    .clase, .comida, .bebidas {
+        font-size: 14px;
+    }
+
+    .recuadro-temporada, .recuadro-carta-temp {
+        font-size: 12px;
+    }
+
 }
