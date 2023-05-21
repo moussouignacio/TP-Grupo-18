@@ -518,6 +518,13 @@ li > a:hover {
         font-size: 12px;
     }
 
+    
+    .carta-bebidas {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
 }
 
 @media (max-width: 400px) {
@@ -572,4 +579,5 @@ li > a:hover {
     .campo-formulario {
         margin-left: 10px;
     }
+
 }
