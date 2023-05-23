@@ -380,7 +380,7 @@ li > a:hover {
 /* la parte de javascript  */
 
 .btn-mas {
-    grid-row: 4;
+    grid-row: 3;
     grid-column: 3;
     font-size: 26px;
     background-color: transparent;
@@ -403,7 +403,7 @@ li > a:hover {
 }
 
 .btn-menos {
-    grid-row: 4;
+    grid-row: 3;
     grid-column: 3;
     font-size: 26px;
     background-color: transparent;
@@ -426,7 +426,7 @@ li > a:hover {
 }
 
 .contador {
-    grid-row: 4;
+    grid-row: 3;
     grid-column: 3;
     font-size: 26px;
     background-color: transparent;
@@ -455,8 +455,8 @@ li > a:hover {
 }
 
 .btn-siguiente {
-    grid-row: 1;
-    grid-column: 1;
+    grid-row: 4;
+    grid-column: 3;
     font-size: 26px;
     background-color: transparent;
     border: 2px solid;
@@ -464,9 +464,16 @@ li > a:hover {
     padding: 15px;
     color: white;
     width: max-content;
-    height: max-content;
+    height: max-content; 
     align-self: center;
-    /* transition: all 0.3s; */
+    justify-self: center;
+    transition: all 0.3s;
+}
+
+.btn-siguiente:hover {
+    background-color: white;
+    color: #83764f;
+    transform: translateY(-10px);
 }
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Temporada2023-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 

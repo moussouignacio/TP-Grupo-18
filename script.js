@@ -31,6 +31,7 @@ function validarFormulario() {
 
 function reserva(){
   // declaro los botones 
+
   const btn = document.querySelector(".btn-reservas")
   btn.innerHTML = "Cuántos comensales vendran?"
   btn.className = "btn-reservas1"
@@ -50,6 +51,13 @@ function reserva(){
   contador.innerHTML = "1"
   contador.className = "contador"
   document.getElementById("recuadro-reservas").appendChild(contador)
+
+  const siguiente = document.createElement("button")
+  const siguiente1 = document.createTextNode("Siguiente")
+  siguiente.appendChild(siguiente1)
+  siguiente.className = "btn-siguiente"
+  document.getElementById("recuadro-reservas").appendChild(siguiente)
+
   // incremento o decremento los valores 
   btnMas.onclick = function(){
     if (valor < 10){
@@ -68,8 +76,11 @@ function reserva(){
     }
   }
 
-
+  siguiente.onclick = function(){
+    
+  }
 }
+
 
 
 
