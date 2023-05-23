@@ -39,12 +39,12 @@
             <div>
                 <form action="" class="campo-formulario">
                     <!-- <label for="name" class="campo-formulario"></label> -->
-                    <input type="text" class="campo-formulario" placeholder="Nombre">
+                    <input type="text" id="nombre" class="campo-formulario" placeholder="Nombre">
                     <!-- <label for="Email" class="campo-formulario"></label> -->
-                    <input type="email" class="campo-formulario" placeholder="Email">
+                    <input type="email" id="correo" class="campo-formulario" placeholder="Email">
                     <!-- <label for="Telefono" class="campo-formulario"></label> -->
-                    <input type="tel" class="campo-formulario" placeholder="Teléfono">
-                    <input type="submit" class="campo-formulario btn">
+                    <input type="tel" id="telefono" class="campo-formulario" placeholder="Teléfono">
+                    <input type="submit" onclick="validarFormulario()" class="campo-formulario btn">
                 </form>
             </div>
         </div>
@@ -56,6 +56,8 @@
         <div class="recuadro2">
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

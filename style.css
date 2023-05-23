@@ -49,6 +49,7 @@ html {
     margin: -8px;
 }
 
+/* página de temporada */
 .container6 {
     display: grid;
     height: 1600px;
@@ -333,7 +334,7 @@ li > a:hover {
 
 .recuadro-reservas {
     display: grid;
-    grid-template: 2fr 2fr / 1fr 1fr 1fr;
+    grid-template: 1fr 1fr 1fr 1fr 1fr/ 1fr 1fr 1fr 1fr 1fr;
     background-color: #83764F;
     grid-row: 2 / span 2;
     grid-column: 3;
@@ -350,14 +351,14 @@ li > a:hover {
     color: white;
     width: max-content;
     height: max-content;
-    grid-row: 1;
-    grid-column: 2;
+    grid-row: 2;
+    grid-column: 3;
     align-self: center;
     /* position: relative;
     top: 150px;
     left: 200px; */
     transition: all 0.3s;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
 
 .btn-reservas:hover {
@@ -372,10 +373,101 @@ li > a:hover {
     /* position: relative;
     top: 180px; */
     color: #fff;
-    grid-row: 2;
-    grid-column: 2;
+    grid-row: 4;
+    grid-column: 3;
 }
 
+/* la parte de javascript  */
+
+.btn-mas {
+    grid-row: 4;
+    grid-column: 3;
+    font-size: 26px;
+    background-color: transparent;
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 15px;
+    color: #fff;
+    width: fit-content;
+    height: fit-content;
+    transition: all 0.3s;
+    align-self: center;
+    justify-self: start;
+    cursor: pointer;
+}
+
+.btn-mas:hover {
+    background-color: white;
+    color: #83764f;
+    transform: translateY(-10px);
+}
+
+.btn-menos {
+    grid-row: 4;
+    grid-column: 3;
+    font-size: 26px;
+    background-color: transparent;
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 15px;
+    color: #fff;
+    width: fit-content;
+    height: fit-content;
+    transition: all 0.3s;
+    align-self: center;
+    justify-self: end;
+    cursor: pointer;
+}
+
+.btn-menos:hover {
+    background-color: white;
+    color: #83764f;
+    transform: translateY(-10px);
+}
+
+.contador {
+    grid-row: 4;
+    grid-column: 3;
+    font-size: 26px;
+    background-color: transparent;
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 15px;
+    color: #fff;
+    width: fit-content;
+    height: fit-content;
+    align-self: center;
+    justify-self: center;
+}
+
+.btn-reservas1 {
+    font-size: 26px;
+    background-color: transparent;
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 15px;
+    color: white;
+    width: max-content;
+    height: max-content;
+    grid-row: 2;
+    grid-column: 3;
+    align-self: center;
+}
+
+.btn-siguiente {
+    grid-row: 1;
+    grid-column: 1;
+    font-size: 26px;
+    background-color: transparent;
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 15px;
+    color: white;
+    width: max-content;
+    height: max-content;
+    align-self: center;
+    /* transition: all 0.3s; */
+}
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Temporada2023-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 .img-temporada {
