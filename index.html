@@ -37,14 +37,14 @@
         <div class="item pie">
             <h2>Mantengase al día con las novedades</h2>
             <div>
-                <form id="form" action="https://formspree.io/f/mvonnawz" method="POST" class="campo-formulario">
-                    <label for="name" class="campo-formulario"></label>
+                <form id="form" action="https://formspree.io/f/mvonnawz" method="POST">
+                    <label for="name"></label>
                     <input type="text" name="name" id="nombre" class="campo-formulario" placeholder="Nombre" required>
-                    <label for="email" class="campo-formulario"></label>
+                    <label for="email"></label>
                     <input type="email" name="email" id="correo" class="campo-formulario" placeholder="Email" required>
-                    <label for="tel" class="campo-formulario"></label>
+                    <label for="tel"></label>
                     <input type="tel" name="tel" id="telefono" class="campo-formulario" placeholder="Teléfono" required>
-                    <input type="submit" class="campo-formulario btn">
+                    <input type="submit" onclick="validarFormulario()" class="campo-formulario btn">
                 </form>
             </div>
         </div>

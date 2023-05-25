@@ -1,5 +1,5 @@
 html {
-    font-family: 'Josefin Sans', sans-serif; 
+    font-family: 'Josefin Sans', sans-serif;
     background-image: url(images/london.jpeg);
 }
 
@@ -10,9 +10,9 @@ html {
     display: grid;
     height: 745px;
     grid-template: 2fr 3fr 1fr / 1fr 0.5fr 1fr;
-    grid-template-areas: "falsologo navbar links" 
-                        "img img buttons" 
-                        "pie pie pie";
+    grid-template-areas: "falsologo navbar links"
+        "img img buttons"
+        "pie pie pie";
     margin: -8px;
 }
 
@@ -53,18 +53,18 @@ html {
 .container6 {
     display: grid;
     height: 1600px;
-    grid-template: 1fr 2fr 2fr 2fr  / 1fr 0.5fr 1fr;
+    grid-template: 1fr 2fr 2fr 2fr / 1fr 0.5fr 1fr;
     grid-template-areas: "falsologo navabar links";
     margin: -8px;
 }
 
-.item { 
+.item {
     max-width: max-content;
     color: white;
 }
 
 /*----------------------------------------------- Barra de Navegación  --------------------------------------------------------- */
- /* LOGO */
+/* LOGO */
 .falsologo {
     grid-area: falsologo;
     font-size: 25px;
@@ -79,21 +79,22 @@ a {
 .navbar {
     grid-area: navbar;
 }
- /* LINKS */
+
+/* LINKS */
 .links {
     grid-area: links;
     text-align: left;
 }
 
-li > a {
+li>a {
     text-decoration: none;
     font-size: 26px;
     color: white;
 }
 
-li > a:hover {
+li>a:hover {
     font-size: 28px;
-    color:#ff8400;
+    color: #ff8400;
 }
 
 /*----------------------------------------------------- Botones Derecha -------------------------------------------------------- */
@@ -129,6 +130,7 @@ li > a:hover {
     background-color: #664229;
     transform: translateY(-10px);
 }
+
 /* ---------------------------------------------------------------Image ----------------------------------------------------------- */
 
 .img {
@@ -140,7 +142,7 @@ li > a:hover {
 .pie {
     grid-area: pie;
     display: flex;
-    background-color:#664229;
+    background-color: #664229;
     max-width: none;
     justify-content: space-around;
     align-items: center;
@@ -151,10 +153,30 @@ li > a:hover {
     border-radius: 5px;
     padding: 6px;
     margin: 5px;
+    background-color: #83764F;
+    border: 2px solid #fff;
+    padding: 8px 15px;
+    color: white;
+    -webkit-box-shadow: 6px 5px 16px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 6px 5px 16px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 6px 5px 16px 0px rgba(0, 0, 0, 0.75);
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
 }
 
 .btn {
-    color: black;
+    background-color: #83764F;
+    font-size: 15px;
+    border: 2px solid;
+    padding: 8px 15px;
+    color: white;
+    width: max-content;
+    height: max-content;
+    transition: all 0.3s;
+    cursor: pointer;
 }
 
 /*---------------------------------------------------------------Scroll -----------------------------------------------------------*/
@@ -167,7 +189,10 @@ li > a:hover {
     /* border: dashed 4px; */
     padding: 20px;
     font-size: 30px;
-    background-color:burlywood
+    background-color: burlywood;
+    -webkit-box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
 }
 
 .recuadro2 {
@@ -175,6 +200,9 @@ li > a:hover {
     grid-row-end: 6;
     grid-column-start: 4;
     background-image: url(images/chef.jpg);
+    -webkit-box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
 }
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Comida--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -187,6 +215,9 @@ li > a:hover {
     grid-column: 3;
     margin-right: 50px;
     margin-bottom: 72px;
+    -webkit-box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
 }
 
 .entrantes {
@@ -196,7 +227,13 @@ li > a:hover {
     margin-left: 50px;
     margin-bottom: 72px;
     color: white;
-    padding: 10px; 
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    -webkit-box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
 }
 
 .clase {
@@ -215,6 +252,7 @@ li > a:hover {
 .entree {
     font-size: 26px;
 }
+
 /* --------------------------------------------------------------- mains ------------------------------------------------------------*/
 
 .mains {
@@ -224,6 +262,9 @@ li > a:hover {
     margin-right: 50px;
     margin-bottom: 72px;
     color: white;
+    -webkit-box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
 }
 
 .img2 {
@@ -232,6 +273,9 @@ li > a:hover {
     background-image: url(images/Blog-Tecnicas-de-cocina-para-chef.webp);
     margin-left: 50px;
     margin-bottom: 72px;
+    -webkit-box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
 }
 
 /* -------------------------------------------------------------- dessert -----------------------------------------------------------*/
@@ -242,6 +286,9 @@ li > a:hover {
     grid-column: 3;
     margin-right: 50px;
     margin-bottom: 72px;
+    -webkit-box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
 }
 
 
@@ -252,6 +299,9 @@ li > a:hover {
     margin-left: 50px;
     margin-bottom: 72px;
     color: white;
+    -webkit-box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
 }
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Bebidas--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -262,6 +312,9 @@ li > a:hover {
     grid-column: 1 / 2;
     margin-left: 50px;
     margin-bottom: 72px;
+    -webkit-box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
 }
 
 .carta-bebidas {
@@ -270,6 +323,9 @@ li > a:hover {
     grid-column: 2 / span 3;
     margin-right: 50px;
     margin-bottom: 72px;
+    -webkit-box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
 
 }
 
@@ -288,14 +344,20 @@ li > a:hover {
     grid-column: 3;
     margin-right: 50px;
     margin-bottom: 72px;
+    -webkit-box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
 }
 
 .carta-cocktails {
     background-color: #400E32;
-    grid-row:  4 / 6;
+    grid-row: 4 / 6;
     grid-column: 1 / span 2;
     margin-left: 50px;
     margin-bottom: 72px;
+    -webkit-box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
 }
 
 /* para el media querie */
@@ -312,6 +374,9 @@ li > a:hover {
     grid-column: 1 / 2;
     margin-left: 50px;
     margin-bottom: 72px;
+    -webkit-box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
 }
 
 .carta-softs {
@@ -320,6 +385,9 @@ li > a:hover {
     grid-column: 2 / span 2;
     margin-right: 50px;
     margin-bottom: 72px;
+    -webkit-box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
 }
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Reservas-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -329,7 +397,10 @@ li > a:hover {
     grid-row: 2 / span 2;
     grid-column: 1 / span 2;
     margin-left: 50px;
-    margin-bottom: 72px
+    margin-bottom: 72px;
+    -webkit-box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
 }
 
 .recuadro-reservas {
@@ -340,6 +411,9 @@ li > a:hover {
     grid-column: 3;
     margin-right: 50px;
     margin-bottom: 72px;
+    -webkit-box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
 }
 
 .btn-reservas {
@@ -359,6 +433,7 @@ li > a:hover {
     left: 200px; */
     transition: all 0.3s;
     /* margin-left: 20px; */
+    cursor: pointer;
 }
 
 .btn-reservas:hover {
@@ -464,7 +539,7 @@ li > a:hover {
     padding: 15px;
     color: white;
     width: max-content;
-    height: max-content; 
+    height: max-content;
     align-self: center;
     justify-self: center;
     transition: all 0.3s;
@@ -487,7 +562,7 @@ li > a:hover {
     padding: 15px;
     color: white;
     width: max-content;
-    height: max-content; 
+    height: max-content;
     align-self: center;
     justify-self: center;
     transition: all 0.3s;
@@ -518,6 +593,7 @@ li > a:hover {
     border: 1px #fff;
     overflow: visible;
 }
+
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Temporada2023-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 .img-temporada {
@@ -526,6 +602,9 @@ li > a:hover {
     grid-column: 1 / span 1;
     margin-left: 50px;
     margin-bottom: 72px;
+    -webkit-box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
 }
 
 .recuadro-temporada {
@@ -537,6 +616,9 @@ li > a:hover {
     font-size: 30px;
     color: white;
     padding: 20px;
+    -webkit-box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
 }
 
 .img-carta-temp {
@@ -545,6 +627,9 @@ li > a:hover {
     grid-column: 2 / span 3;
     margin-right: 50px;
     margin-bottom: 72px;
+    -webkit-box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: 14px 12px 13px 6px rgba(0, 0, 0, 0.75);
 }
 
 .recuadro-carta-temp {
@@ -555,6 +640,9 @@ li > a:hover {
     margin-bottom: 72px;
     color: #fff;
     padding: 20px;
+    -webkit-box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: -6px 12px 13px 6px rgba(0, 0, 0, 0.75);
 }
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------MediaQueries-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -564,11 +652,14 @@ li > a:hover {
         font-size: 28px;
     }
 
-    .clase, .comida, .bebidas {
+    .clase,
+    .comida,
+    .bebidas {
         font-size: 24px;
     }
 
-    .recuadro-temporada, .recuadro-carta-temp {
+    .recuadro-temporada,
+    .recuadro-carta-temp {
         font-size: 23px;
     }
 }
@@ -578,12 +669,18 @@ li > a:hover {
         font-size: 25px;
     }
 
-    .clase, .comida, .bebidas {
+    .clase,
+    .comida,
+    .bebidas {
         font-size: 22px;
     }
 
-    .recuadro-temporada, .recuadro-carta-temp {
+    .recuadro-temporada,
+    .recuadro-carta-temp {
         font-size: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
     }
 }
 
@@ -596,10 +693,12 @@ li > a:hover {
         font-size: 22px;
     }
 
-    .btn1, .btn2 {
+    .btn1,
+    .btn2 {
         border: solid 1px;
     }
-    li > a {
+
+    li>a {
         font-size: 25px;
     }
 
@@ -607,16 +706,22 @@ li > a:hover {
         font-size: 10px;
     }
 
-    div > h2 {
+    div>h2 {
         font-size: 15px;
     }
 
-    .clase, .comida, .bebidas {
+    .clase,
+    .comida,
+    .bebidas {
         font-size: 18px;
     }
 
-    .recuadro-temporada, .recuadro-carta-temp {
+    .recuadro-temporada,
+    .recuadro-carta-temp {
         font-size: 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
     }
 }
 
@@ -629,21 +734,28 @@ li > a:hover {
         font-size: 20px;
     }
 
-    li > a {
+    li>a {
         font-size: 22px;
     }
 
-    .clase, .comida, .bebidas {
+    .clase,
+    .comida,
+    .bebidas {
         font-size: 15px;
     }
 
-    .txt1-reservas, .btn-reservas {
+    .txt1-reservas,
+    .btn-reservas {
         font-size: 18px;
         margin: 0;
     }
 
-    .recuadro-temporada, .recuadro-carta-temp {
+    .recuadro-temporada,
+    .recuadro-carta-temp {
         font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
     }
 }
 
@@ -652,15 +764,18 @@ li > a:hover {
         font-size: 16px;
     }
 
-    .clase, .comida, .bebidas {
+    .clase,
+    .comida,
+    .bebidas {
         font-size: 14px;
     }
 
-    .recuadro-temporada, .recuadro-carta-temp {
+    .recuadro-temporada,
+    .recuadro-carta-temp {
         font-size: 12px;
     }
 
-    
+
     .carta-bebidas {
         display: flex;
         flex-direction: column;
@@ -673,8 +788,12 @@ li > a:hover {
     .item {
         font-size: 14px;
     }
+
     .recuadro1 {
         font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .entree {
@@ -687,6 +806,9 @@ li > a:hover {
 
     .cocktails {
         font-size: 13px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
     }
 
     .img-reservas {
@@ -694,16 +816,19 @@ li > a:hover {
         grid-column: 1;
     }
 
-    .recuadro-reservas{
+    .recuadro-reservas {
         grid-row: 2;
         grid-column: 2 / span 3;
     }
 
     .recuadro-carta-temp {
-        font-size: 12px;
+        font-size: 10px;
+        padding: 0;
+
     }
 
-    .btn1, .btn2 {
+    .btn1,
+    .btn2 {
         margin-right: 20px;
     }
 
@@ -722,4 +847,10 @@ li > a:hover {
         margin-left: 10px;
     }
 
+    .entrantes {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 0px;
+    }
 }
