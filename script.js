@@ -176,7 +176,10 @@ fetch(URL + "/reservas")
         document.getElementById("recuadro-reservas").appendChild(label1)
         document.getElementById("recuadro-reservas").appendChild(nombre)
 
-        
+        var dateTimeValue = fecha.value
+        var dateTime = new Date(dateTimeValue)
+        var fechaFinal = dateTime.toLocaleDateString()
+        var horaFinal = dateTime.toLocaleTimeString()
 
         siguiente4.onclick = agregarReserva;
 
@@ -185,7 +188,8 @@ fetch(URL + "/reservas")
 
           var reserva = {
             nombre: nombre.value,
-            fecha_reserva: fecha.value,
+            fecha_reserva: fechaFinal,
+            hora_reserva: horaFinal,
             capacidad: valor
           }
           console.log(reserva)
