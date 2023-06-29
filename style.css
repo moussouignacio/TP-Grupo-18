@@ -590,8 +590,25 @@ li>a:hover {
     text-align: center;
     background-color: transparent;
     color: #fff;
-    border: 1px #fff;
+    border: 2px;
     overflow: visible;
+    -webkit-box-shadow: -1px 2px 31px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 2px 31px -4px rgba(0,0,0,0.75);
+    box-shadow: -1px 2px 31px -4px rgba(0,0,0,0.75);
+}
+
+.input-nombre {
+    grid-row: 3;
+    grid-column: 3;
+    font-size: 22px;
+    text-align: center;
+    background-color: transparent;
+    color: #fff;
+    border: 2px;
+    overflow: visible;
+    -webkit-box-shadow: -1px 2px 31px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 2px 31px -4px rgba(0,0,0,0.75);
+    box-shadow: -1px 2px 31px -4px rgba(0,0,0,0.75);
 }
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Temporada2023-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/

@@ -26,7 +26,7 @@ function validarFormulario() {
 
 const $form = document.querySelector("#form")
 
-$form.addEventListener("submit", handleSubmit)
+$form.addEventListener("submit", handleSubmit) 
 
 async function handleSubmit(event) {
   event.preventDefault()
@@ -44,6 +44,25 @@ async function handleSubmit(event) {
     alert("Gracias por suscribirte a nuestras noticias.")
   }
 }
+
+const URL = "http://127.0.0.1:5000"
+
+fetch(URL + "/reservas")
+  .then(function(response){
+    if (response.ok){
+        return response.json();
+    } else {
+      throw new Error("Error al obtener las reservas")
+    }
+  })
+  .then(function (data){
+    data.forEach(function (reserva) {
+      console.log(reserva.id)
+      console.log(reserva.nombre)
+      console.log(reserva.fecha_reserva)
+      console.log(reserva.hora_reserva)
+    })
+  })
   
 
   // modifica el menu de reserva al hacer click 
@@ -104,6 +123,7 @@ async function handleSubmit(event) {
 
       const form = document.createElement("form")
       form.setAttribute("action", "")
+      form.className = "form"
 
       const label = document.createElement("label")
       label.innerHTML = "Ingrese la fecha deseada"
@@ -125,10 +145,54 @@ async function handleSubmit(event) {
       document.getElementById("recuadro-reservas").appendChild(label)
       document.getElementById("recuadro-reservas").appendChild(fecha)
 
+      // const fechaReserva = fecha.value
+
+      
+
       siguiente2.onclick = function () {
-        alert(`Se ha creado una reserva para el ${fecha.value} para ${valor} personas`)
-        location.reload()
+        label.remove()
+        fecha.remove()
+        siguiente2.remove()
+
+        const label1 = document.createElement("label")
+        label1.innerHTML = "Ingrese su nombre"
+        label1.className = "etiqueta"
+
+        const siguiente4 = document.createElement("submit")
+        const siguiente5 = document.createTextNode("Siguiente")
+        siguiente4.className = "btn-siguiente1"
+        siguiente4.appendChild(siguiente5)
+        siguiente4.setAttribute("type", "submit")
+        siguiente4.setAttribute("value", "submit")
+
+        const nombre = document.createElement("input")
+        nombre.setAttribute("type", "text")
+        nombre.className = "input-nombre"
+
+        // const nombreReserva = nombre.value
+
+        document.getElementById("recuadro-reservas").appendChild(siguiente4)
+        // document.getElementById("recuadro-reservas").appendChild(form)
+        document.getElementById("recuadro-reservas").appendChild(label1)
+        document.getElementById("recuadro-reservas").appendChild(nombre)
+
+        
+
+        siguiente4.onclick = agregarReserva;
+
+        function agregarReserva(event) {
+          event.preventDefault();
+
+          var reserva = {
+            nombre: nombre.value,
+            fecha_reserva: fecha.value,
+            capacidad: valor
+          }
+          console.log(reserva)
+        }
       }
     }
+
   }
+
 

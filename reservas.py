@@ -1,5 +1,14 @@
 import sqlite3
 from datetime import datetime
+from flask import Flask, jsonify, request
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
+
+# @app.route("/")
+# def index():
+#     return render_template('index.html')
 
 # Conexión a la base de datos
 def conectar_bd():
@@ -11,7 +20,8 @@ def cerrar_bd(conn):
     conn.close()
 
 # Crear la tabla de reservas (si no existe)
-def crear_tabla_reservas(conn):
+def crear_tabla_reservas():
+    conn = conectar_bd()
     cursor = conn.cursor()
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS reservas (
@@ -23,26 +33,42 @@ def crear_tabla_reservas(conn):
         )
     ''')
     conn.commit()
+    cursor.close()
+    conn.close()
 
 # Agregar una reserva
-def agregar_reserva(conn, nombre, fecha_reserva, hora_reserva, capacidad):
-    if fecha_reserva_valida(fecha_reserva, hora_reserva):
-        cursor = conn.cursor()
-        cursor.execute('INSERT INTO reservas (nombre, fecha_reserva, hora_reserva, capacidad) VALUES (?, ?, ?, ?)', (nombre, fecha_reserva, hora_reserva, capacidad))
-        conn.commit()
-        print('Reserva agregada exitosamente.')
-    else:
-        print("La fecha y la hora de la reserva no son válidas, intente nuevamente")
+@app.route("/reservas", methods=["POST"])
+def agregar_reserva(nombre, fecha_reserva, hora_reserva, capacidad):
+    data = request.get_json()
+    if "nombre" not in data or "fecha_reserva" not in data or "hora_reserva" not in data or "capacidad" not in data:
+        return jsonify({"Error: Falta uno o más campos requeridos"}), 400
+    try:
+        if fecha_reserva_valida(fecha_reserva, hora_reserva):
+            conn = conectar_bd()
+            cursor = conn.cursor()
+            cursor.execute('INSERT INTO reservas (nombre, fecha_reserva, hora_reserva, capacidad) VALUES (?, ?, ?, ?)', (data[nombre], data[fecha_reserva], data[hora_reserva], data[capacidad]))
+            conn.commit()
+            cursor.close()
+            conn.close()
+            return jsonify({"Reserva agregada correctamente"}), 201
+        else:
+            print("La fecha y la hora de la reserva no son válidas, intente nuevamente")
+    except:
+        return jsonify({"Error al dar de alta el producto"}), 500
 
 # Eliminar una reserva por su ID
-def eliminar_reserva(conn, reserva_id):
+def eliminar_reserva(reserva_id):
+    conn = conectar_bd()
     cursor = conn.cursor()
     cursor.execute('DELETE FROM reservas WHERE id = ?', (reserva_id,))
     conn.commit()
+    cursor.close()
+    conn.close()
     print('Reserva eliminada exitosamente.')
 
 # Modificar una reserva por su ID
-def modificar_reserva(conn, reserva_id, nombre, fecha_reserva, hora_reserva, capacidad):
+def modificar_reserva(reserva_id, nombre, fecha_reserva, hora_reserva, capacidad):
+    conn = conectar_bd()
     cursor = conn.cursor()
     cursor.execute('''
         UPDATE reservas
@@ -50,17 +76,36 @@ def modificar_reserva(conn, reserva_id, nombre, fecha_reserva, hora_reserva, cap
         WHERE id = ?
     ''', (nombre, fecha_reserva, hora_reserva, capacidad, reserva_id))
     conn.commit()
+    cursor.close()
+    conn.close()
     print('Reserva modificada exitosamente.')
 
 # Consultar la tabla de reservas
-def consultar_tabla(conn):
-    cursor = conn.cursor()
-    cursor.execute('SELECT * FROM reservas')
-    reservas = cursor.fetchall()
-    print('ID\tNombre\tFecha\tHora\tCapacidad')
-    for reserva in reservas:
-        print('{}\t{}\t{}\t{}\t{}'.format(reserva[0], reserva[1], reserva[2], reserva[3], reserva[4]))
-
+@app.route("/reservas", methods=["GET"])
+def consultar_tabla():
+    try:
+        conn = conectar_bd()
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM reservas')
+        reservas = cursor.fetchall()
+        # print('ID\tNombre\tFecha\tHora\tCapacidad')
+        # for reserva in reservas:
+        #     print('{}\t{}\t{}\t{}\t{}'.format(reserva[0], reserva[1], reserva[2], reserva[3], reserva[4]))
+        cursor.close()
+        conn.close()
+        respuesta = []
+        for reserva in reservas:
+            respuesta.append({
+                "id": reserva[0],
+                "nombre": reserva[1],
+                "fecha_reserva": reserva[2],
+                "hora_reserva": reserva[3],
+                "capacidad": reserva[4]
+            })
+        return jsonify(respuesta)
+    except:
+        return jsonify("Error al listar los productos")
+    
 # Verificar si una fecha de reserva es válida
 def fecha_reserva_valida(fecha_reserva, hora_reserva):
     ahora = datetime.now()
@@ -73,17 +118,15 @@ def fecha_reserva_valida(fecha_reserva, hora_reserva):
 # if fecha_reserva_valida("2021-06-30", "18:00") == True:
 #     agregar_reserva(conn, "Juan", "2021-06-30", "18:00", 4)
 
+# agregar_reserva("Pepe", "2023-06-29", "19:45", 3)
+# agregar_reserva("Mario", "2023-06-30", "20:00", 5)
+# agregar_reserva("Loana", "2023-06-30", "20:30", 2)
 
+@app.route("/", methods=["GET"])
+def inicio():
+    return("Hola Codo a Codo API")
 
-
-
-
-# Ejemplo de uso
-conn = conectar_bd()
-# crear_tabla_reservas(conn)
-consultar_tabla(conn)
-agregar_reserva(conn,"Juan", "2023-06-30", "18:00", 4)
-# eliminar_reserva(conn, 1)
-consultar_tabla(conn)
-cerrar_bd(conn)
+if __name__ == "__main__":
+    crear_tabla_reservas()
+    app.run()
 
