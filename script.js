@@ -193,6 +193,28 @@ fetch(URL + "/reservas")
             capacidad: valor
           }
           console.log(reserva)
+
+          var URL = "http://127.0.0.1:5000/"
+          fetch(URL + "reservas", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(reserva)
+          })
+
+            .then(function (response) {
+              if (response.ok) {
+                return response.json();
+              } else {
+                // alert("Se ha producido un error al agregar la reserva")
+                // location.reload()
+                throw new Error("Error al agregar la reserva")
+              }
+            })
+            .then(function (data) {
+              alert(`Se ha creado una reserva a nombre ${reserva[nombre]} para el día ${reserva.fecha_reserva}`)
+            })
         }
       }
     }

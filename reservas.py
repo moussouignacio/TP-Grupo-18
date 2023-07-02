@@ -38,21 +38,21 @@ def crear_tabla_reservas():
 
 # Agregar una reserva
 @app.route("/reservas", methods=["POST"])
-def agregar_reserva(nombre, fecha_reserva, hora_reserva, capacidad):
+def agregar_reserva():
     data = request.get_json()
-    if "nombre" not in data or "fecha_reserva" not in data or "hora_reserva" not in data or "capacidad" not in data:
-        return jsonify({"Error: Falta uno o más campos requeridos"}), 400
+    # if data[0] not in data or data[1] not in data or data[2] not in data or data[3] not in data:
+        # return jsonify({"Error: Falta uno o más campos requeridos"}), 400
     try:
-        if fecha_reserva_valida(fecha_reserva, hora_reserva):
+        # if fecha_reserva_valida():
             conn = conectar_bd()
             cursor = conn.cursor()
-            cursor.execute('INSERT INTO reservas (nombre, fecha_reserva, hora_reserva, capacidad) VALUES (?, ?, ?, ?)', (data[nombre], data[fecha_reserva], data[hora_reserva], data[capacidad]))
+            cursor.execute('INSERT INTO reservas (nombre, fecha_reserva, hora_reserva, capacidad) VALUES (?, ?, ?, ?)', (data["nombre"], data["fecha_reserva"], data["hora_reserva"], data["capacidad"]))
             conn.commit()
             cursor.close()
             conn.close()
             return jsonify({"Reserva agregada correctamente"}), 201
-        else:
-            print("La fecha y la hora de la reserva no son válidas, intente nuevamente")
+        # else:
+            # retsurn jsonify({"La fecha y la hora de la reserva no son válidas, intente nuevamente"}), 500
     except:
         return jsonify({"Error al dar de alta el producto"}), 500
 
@@ -107,13 +107,17 @@ def consultar_tabla():
         return jsonify("Error al listar los productos")
     
 # Verificar si una fecha de reserva es válida
-def fecha_reserva_valida(fecha_reserva, hora_reserva):
+@app.route("/reservas", methods=["POST"])
+def fecha_reserva_valida():
+    data = request.get_json()
     ahora = datetime.now()
-    fecha_hora_reserva = datetime.strptime(fecha_reserva + ' ' + hora_reserva, '%Y-%m-%d %H:%M')
-    if fecha_hora_reserva < ahora:
-        return False
+    fecha_str = data["fecha_reserva"]
+    fecha = datetime.strptime(fecha_str, "%Y-%m-%d")
+    if ahora > fecha:
+        return True
     # Resto de la lógica para verificar si hay disponibilidad y si la hora está dentro del horario dispuesto
-    return True
+    else:
+        return False
 
 # if fecha_reserva_valida("2021-06-30", "18:00") == True:
 #     agregar_reserva(conn, "Juan", "2021-06-30", "18:00", 4)
