@@ -205,6 +205,7 @@ fetch(URL + "/reservas")
 
             .then(function (response) {
               if (response.ok) {
+                // alert(`Se ha creado una reserva a nombre ${reserva[nombre]} para el día ${reserva.fecha_reserva}`)
                 return response.json();
               } else {
                 // alert("Se ha producido un error al agregar la reserva")

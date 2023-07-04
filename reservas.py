@@ -40,10 +40,8 @@ def crear_tabla_reservas():
 @app.route("/reservas", methods=["POST"])
 def agregar_reserva():
     data = request.get_json()
-    # if data[0] not in data or data[1] not in data or data[2] not in data or data[3] not in data:
-        # return jsonify({"Error: Falta uno o más campos requeridos"}), 400
     try:
-        # if fecha_reserva_valida():
+        # if fecha_reserva_valida() and datos_vacios():
             conn = conectar_bd()
             cursor = conn.cursor()
             cursor.execute('INSERT INTO reservas (nombre, fecha_reserva, hora_reserva, capacidad) VALUES (?, ?, ?, ?)', (data["nombre"], data["fecha_reserva"], data["hora_reserva"], data["capacidad"]))
@@ -51,10 +49,8 @@ def agregar_reserva():
             cursor.close()
             conn.close()
             return jsonify({"Reserva agregada correctamente"}), 201
-        # else:
-            # retsurn jsonify({"La fecha y la hora de la reserva no son válidas, intente nuevamente"}), 500
     except:
-        return jsonify({"Error al dar de alta el producto"}), 500
+        return jsonify({"Error al agregar la reserva"}), 500
 
 # Eliminar una reserva por su ID
 def eliminar_reserva(reserva_id):
@@ -113,11 +109,20 @@ def fecha_reserva_valida():
     ahora = datetime.now()
     fecha_str = data["fecha_reserva"]
     fecha = datetime.strptime(fecha_str, "%Y-%m-%d")
-    if ahora > fecha:
-        return True
-    # Resto de la lógica para verificar si hay disponibilidad y si la hora está dentro del horario dispuesto
-    else:
+    if fecha < ahora:
         return False
+    else:
+        return True
+
+# Verificar si los datos viajan vacios
+@app.route("/reservas", methods=["POST"])
+def datos_vacios():
+    data = request.get_json()
+    if 'nombre' not in data or 'fecha_reserva' not in data or 'hora_reserva' not in data or 'capacidad' not in data:
+        return False
+    else:
+        return True
+
 
 # if fecha_reserva_valida("2021-06-30", "18:00") == True:
 #     agregar_reserva(conn, "Juan", "2021-06-30", "18:00", 4)
@@ -126,11 +131,12 @@ def fecha_reserva_valida():
 # agregar_reserva("Mario", "2023-06-30", "20:00", 5)
 # agregar_reserva("Loana", "2023-06-30", "20:30", 2)
 
-@app.route("/", methods=["GET"])
-def inicio():
-    return("Hola Codo a Codo API")
+# @app.route("/", methods=["GET"])
+# def inicio():
+#     return("Hola Codo a Codo API")
 
 if __name__ == "__main__":
     crear_tabla_reservas()
     app.run()
+
 
